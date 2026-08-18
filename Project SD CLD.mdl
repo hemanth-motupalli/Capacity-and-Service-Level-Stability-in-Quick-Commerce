@@ -1,0 +1,178 @@
+{UTF-8}
+Attrition Rate  = A FUNCTION OF( Rider Workforce)
+	~	
+	~		|
+
+Capacity Utilization  = A FUNCTION OF( Order Fulfillment Rate)
+	~	
+	~		|
+
+Delivery Capacity  = A FUNCTION OF( Rider Workforce)
+	~	
+	~		|
+
+Delivery Delay  = A FUNCTION OF( Capacity Utilization,Order Backlog)
+	~	
+	~		|
+
+Desired Workforce  = A FUNCTION OF( Order Backlog)
+	~	
+	~		|
+
+Hiring Rate  = A FUNCTION OF( Desired Workforce)
+	~	
+	~		|
+
+Inventory Gap  = A FUNCTION OF( Inventory Level)
+	~	
+	~		|
+
+Inventory Level  = A FUNCTION OF( Order Fulfillment Rate,Replenishment Rate)
+	~	
+	~		|
+
+Order Arrival Rate  = A FUNCTION OF( Service Level)
+	~	
+	~		|
+
+Order Backlog  = A FUNCTION OF( Order Arrival Rate,Order Fulfillment Rate)
+	~	
+	~		|
+
+Order Fulfillment Rate  = A FUNCTION OF( Delivery Capacity,Inventory Level)
+	~	
+	~		|
+
+Replenishment Rate  = A FUNCTION OF( Inventory Gap)
+	~	
+	~		|
+
+Rider Workforce  = A FUNCTION OF( Attrition Rate,Hiring Rate)
+	~	
+	~		|
+
+Service Level  = A FUNCTION OF( Delivery Delay)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 100
+	~	Hour
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Hour
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Hour [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.125
+	~	Hour [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,67,2
+10,1,Order Backlog,792,250,54,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,2,Delivery Delay,912,140,54,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,1,2,1,0,43,0,0,192,0,-1--1--1,,1|(805,182)|
+10,4,Service Level,1094,210,49,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,5,2,4,1,0,45,0,0,192,0,-1--1--1,,1|(1022,136)|
+10,6,Order Arrival Rate,956,355,50,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,7,4,6,1,0,43,0,0,192,0,-1--1--1,,1|(1085,318)|
+1,8,6,1,1,0,43,0,0,192,0,-1--1--1,,1|(843,318)|
+12,9,0,941,244,44,44,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B1|<<NnN>>|
+12,10,71,1406,129,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Demand–Service Loop (Balancing Loop B1)
+12,11,71,1405,220,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Workforce Adjustment Loop (Balancing Loop B2)
+10,12,Desired Workforce,654,166,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,13,Hiring Rate,545,281,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,14,Rider Workforce,526,372,60,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,15,Delivery Capacity,628,465,64,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,16,Order Fulfillment Rate,797,427,64,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,17,1,12,1,0,43,0,0,192,0,-1--1--1,,1|(736,170)|
+1,18,12,13,1,0,43,0,0,192,0,-1--1--1,,1|(560,204)|
+1,19,13,14,1,0,43,0,0,192,0,-1--1--1,,1|(482,310)|
+1,20,14,15,1,0,43,0,0,192,0,-1--1--1,,1|(533,456)|
+1,21,15,16,1,0,43,0,0,192,0,-1--1--1,,1|(747,488)|
+1,22,16,1,0,0,45,0,0,192,0,-1--1--1,,1|(0,0)|
+12,23,0,662,325,40,40,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B2
+12,24,71,1410,315,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Capacity Utilization Loop (Balancing Loop B3)
+12,25,71,1411,409,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Inventory Replenishment Loop (Balancing Loop B4)
+12,26,71,1414,507,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Inventory–Fulfillment Constraint Loop (Balancing Loop B5)
+12,27,71,1413,603,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Workforce Attrition Loop (Balancing Loop B6)
+10,28,Capacity Utilization,1220,318,46,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,29,16,28,1,0,43,0,0,192,0,-1--1--1,,1|(1065,445)|
+1,30,28,2,1,0,43,0,0,192,0,-1--1--1,,1|(1146,129)|
+12,31,0,930,421,29,29,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B3
+10,32,Inventory Level,849,554,57,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,33,Inventory Gap,984,633,53,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,34,Replenishment Rate,1106,532,57,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,35,32,33,1,0,45,0,0,192,0,-1--1--1,,1|(878,628)|
+1,36,33,34,1,0,43,0,0,192,0,-1--1--1,,1|(1101,616)|
+1,37,34,32,1,0,43,0,0,192,0,-1--1--1,,1|(976,501)|
+1,38,32,16,1,0,43,0,0,192,0,-1--1--1,,1|(728,535)|
+1,39,16,32,1,0,45,0,0,192,0,-1--1--1,,1|(845,486)|
+12,40,0,977,573,36,36,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B4
+12,41,0,787,513,26,26,4,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B5
+10,42,Attrition Rate,337,355,51,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,43,14,42,1,0,43,0,0,192,0,-1--1--1,,1|(412,306)|
+1,44,42,14,1,0,45,0,0,192,0,-1--1--1,,1|(424,433)|
+12,45,0,434,377,29,29,5,7,0,0,-1,0,0,0,0,0,0,0,0,0
+B6
+12,46,0,1401,65,80,40,8,7,0,0,-1,0,0,0,0,0,0,0,0,0
+Balancing Loops used 
+///---\\\
+:L<%^E!@
+5:Rider Workforce
+19:67,0
+24:0
+25:0
+26:0
+23:0
+15:0,0,0,0,0,0
+27:0,
+34:0,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Vensim Sans|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
