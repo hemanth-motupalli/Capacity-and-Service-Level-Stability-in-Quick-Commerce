@@ -22,6 +22,6 @@ The system was stress-tested against several real-world operational challenges:
 * **Software:** Vensim
 
 ## Team: System Thinker
-* **Motupalli Hemanth Kumar** (IEOR, IIT Bombay)
+* **Motupalli Hemanth Kumar** 
 * **Ashish Shukla**
 * **Bhupesh Ranjan Jha**
